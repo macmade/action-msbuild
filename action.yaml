@@ -1,5 +1,9 @@
-name:           'msbuild'
-description:    'GitHub Action for msbuild'
+name:           macmade - msbuild
+description:    GitHub Action for msbuild.
+author:         macmade
+branding:
+    icon:       box
+    color:      blue
 runs:
     using:      'composite'
     steps:
