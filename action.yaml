@@ -15,4 +15,4 @@ runs:
         - name:     MSBuild - Build
           id:       msbuild-build
           shell:    cmd
-          run:      msbuild ${{ matrix.run-config[ 'solution' ] }} /property:Configuration=${{ matrix.run-config[ 'configuration' ] }} /property:Platform=${{ matrix.run-config[ 'platform' ] }} /p:PreferredToolArchitecture=${{ matrix.run-config[ 'toolset' ] }}
+          run:      msbuild ${{ matrix.run-config[ 'solution' ] }} /property:Configuration=${{ matrix.run-config[ 'configuration' ] }} /property:Platform="${{ matrix.run-config[ 'platform' ] }}" /p:PreferredToolArchitecture=${{ matrix.run-config[ 'toolset' ] }}
