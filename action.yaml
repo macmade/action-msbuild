@@ -12,6 +12,11 @@ runs:
           id:       msbuild-setup
           uses:     microsoft/setup-msbuild@v1.0.3
         
+        - name:     MSBuild - NuGet
+          id:       msbuild-nuget
+          shell:    cmd
+          run:      msbuild -t:restore ${{ matrix.run-config[ 'solution' ] }}
+        
         - name:     MSBuild - Build
           id:       msbuild-build
           shell:    cmd
