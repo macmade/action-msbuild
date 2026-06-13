@@ -42,7 +42,7 @@ GitHub Action for msbuild.
                         - { platform: 'x64', toolset: 'x64', configuration: 'Debug',   solution: 'App.sln' }
                         - { platform: 'x86', toolset: 'x64', configuration: 'Release', solution: 'App.sln' }
             steps:
-                - uses: actions/checkout@v1
+                - uses: actions/checkout@v6
                 - uses: macmade/action-msbuild@v1.0.0
 
 License
