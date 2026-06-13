@@ -17,9 +17,9 @@ runs:
         - name:     MSBuild - NuGet
           id:       msbuild-nuget
           shell:    cmd
-          run:      msbuild -t:restore ${{ matrix.run-config[ 'solution' ] }}
+          run:      msbuild -t:restore "${{ matrix.run-config[ 'solution' ] }}"
         
         - name:     MSBuild - Build
           id:       msbuild-build
           shell:    cmd
-          run:      msbuild ${{ matrix.run-config[ 'solution' ] }} /property:Configuration=${{ matrix.run-config[ 'configuration' ] }} /property:Platform="${{ matrix.run-config[ 'platform' ] }}" /p:PreferredToolArchitecture=${{ matrix.run-config[ 'toolset' ] }}
+          run:      msbuild "${{ matrix.run-config[ 'solution' ] }}" /property:Configuration=${{ matrix.run-config[ 'configuration' ] }} /property:Platform="${{ matrix.run-config[ 'platform' ] }}" /p:PreferredToolArchitecture=${{ matrix.run-config[ 'toolset' ] }}
